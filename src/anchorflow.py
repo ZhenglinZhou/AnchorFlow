@@ -377,11 +377,11 @@ def set_seed(seed=42):
 
 if __name__ == '__main__':
     # load from huggingface
-    # model_path = "tencent/Hunyuan3D-2.1"
+    model_path = "tencent/Hunyuan3D-2.1"
 
     # load from local
-    os.environ["HY3DGEN_MODELS"] = '/root/autodl-fs-data7/zhenglin/model_weights'
-    model_path = 'Hunyuan3D-2.1'
+    # os.environ["HY3DGEN_MODELS"] = '/path/to/the/hunyuan3d/model_weights'
+    # model_path = 'Hunyuan3D-2.1'
 
     hunyuan_vae = Hunyuan3DVAE(model_path=model_path)
     hunyuan_3dedit = Hunyuan3DEdit.from_pretrained(model_path=model_path)
@@ -393,7 +393,7 @@ if __name__ == '__main__':
     use_anchorflow = True
     tag = "anchorflow" if use_anchorflow else "baseline"
 
-    exp_dir = Path("examples")
+    exp_dir = Path("examples/0")
     output_dir = exp_dir / "outputs"
     output_dir.mkdir(parents=True, exist_ok=True)
 
