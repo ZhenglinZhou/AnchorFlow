@@ -56,11 +56,9 @@ Given a `source shape` and `editing prompt`, we first construct the editing cond
 
 You can find example setups in `./examples`.
 
-
 ## Notes
 
 - If you have questions or find bugs, feel free to open an issue or email the first author (zhenglinzhou@zju.edu.cn).
-
 - If you encouter `EGL: cannot open shared object file: No such file or directory` error during rendering mesh, try to install following packages: `sudo apt-get install libegl1-mesa libgl1-mesa-glx`.
 
 ## Acknowledgements
@@ -72,11 +70,10 @@ Our repo is built on top of several several awesome projects and works, includin
 If you find AnchorFlow useful for your research and applications, please cite us using this BibTex:
 
 ```bibtex
-@article{zhou2025,
+@article{zhou2025anchorflow,
   title={AnchorFlow: Training-Free 3D Editing via Latent Anchor-Aligned Flows},
   author={Zhou, Zhenglin and Ma, Fan and Gui, Chengzhuo and Xia, Xiaobo and Fan, Hehe and Yang, Yi and Chua, Tat-Seng},
   journal={arXiv preprint arXiv:},
   year={2025},
 }
 ```
-
