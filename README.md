@@ -1,5 +1,8 @@
 # AnchorFlow: Training-Free 3D Editing via Latent Anchor-Aligned Flows
 
+<a href='https://arxiv.org/pdf/2511.22357'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
+
+
 This repo provides the official implementation of **AnchorFlow**, a **training-free** framework for 3D shape editing. The method performs editing directly in the 3D latent space by aligning source and target flow trajectories with latent anchors, enabling semantic-consistent, identity-preserving, and **mask-free** 3D editing across both rigid and non-rigid scenarios.
 
 ![teaser](./assets/teaser.png)
@@ -73,7 +76,8 @@ If you find AnchorFlow useful for your research and applications, please cite us
 @article{zhou2025anchorflow,
   title={AnchorFlow: Training-Free 3D Editing via Latent Anchor-Aligned Flows},
   author={Zhou, Zhenglin and Ma, Fan and Gui, Chengzhuo and Xia, Xiaobo and Fan, Hehe and Yang, Yi and Chua, Tat-Seng},
-  journal={arXiv preprint arXiv:},
+  journal={arXiv preprint arXiv:2511.22357},
   year={2025},
 }
 ```
+
