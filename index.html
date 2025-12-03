@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnchorFlow: Training-Free 3D Editing</title>
+
+  <!-- TRELLIS existing assets -->
+  <link rel="stylesheet" href="fonts/avenir-next/stylesheet.css">
+  <link rel="stylesheet" href="fonts/segoe-print/stylesheet.css">
+  <link rel="stylesheet" href="icons/style.css">
+  <link rel="stylesheet" href="css/window.css">
+  <link rel="stylesheet" href="css/carousel.css">
+  <link rel="stylesheet" href="css/selection_panel.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- model-viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <script src="js/window.js"></script>
+
+  <!-- JS -->
+  <script src="js/carousel.js"></script>
+  <script src="js/editing.js"></script>
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+<div id="main">
+
+  <!-- TITLE -->
+  <div id="title" class="x-gradient-font">
+    <span class="x-title-large">AnchorFlow</span><br>
+    <span class="x-title-medium">Training-Free 3D Editing via Latent Anchor-Aligned Flows</span>
+  </div>
+
+  <div id="links" style="margin-bottom: 24px;">
+    <div><a id="paper" href="https://arxiv.org/pdf/2511.22357" target="_blank">Paper</a></div>
+    <div><a id="arxiv" href="https://arxiv.org/abs/2511.22357" target="_blank">ArXiv</a></div>
+    <div><a id="code" href="https://github.com/ZhenglinZhou/AnchorFlow" target="_blank">Code</a></div>
+  </div>
+
+  <p class="x-note">
+    <i>
+      AnchorFlow is a training-free framework for 3D shape editing. It aligns source and target flow trajectories
+      with latent anchors to achieve semantic-consistent, identity-preserving, mask-free 3D editing.
+      (Click the teaser below to see AnchorFlow in action 👇)
+    </i>
+  </p>
+
+  <div id="teaser">
+    <div style="width: 100%;">
+      <video
+        id="teaser-video"
+        playsinline
+        loop
+        muted
+        src="assets/teaser/teaser.mp4"
+        poster="assets/teaser/teaser.png">
+      </video>
+    </div>
+  </div>
+
+
+  <div class="x-section-title">
+    <div class="x-gradient-font">Editing Results</div>
+  </div>
+
+  <div id="results-manipulation"></div>
+
+  <div class="x-section-title">
+    <div class="x-gradient-font">Acknowledgement</div>
+  </div>
+  <p class="x-note" style="margin-top: 16px;">
+    <i>
+      This project webpage is built upon the
+      <a href="https://microsoft.github.io/TRELLIS/" target="_blank" class="link">
+        TRELLIS project page.
+      </a>
+      We thank the TRELLIS authors for open-sourcing their webpage design and assets.
+    </i>
+  </p>
+
+
+  <div class="x-section-title">
+    <div class="x-gradient-font">Citation</div>
+  </div>
+
+  <p class="x-note" style="margin-top: 16px;">
+    <i>
+      If you find our work useful, please consider citing:
+    </i>
+  </p>
+
+  <p class="bibtex x-gradient-block" style="white-space: pre-line;">
+    @article{zhou2025anchorflow,
+    &nbsp;&nbsp;&nbsp;&nbsp;title={AnchorFlow: Training-Free 3D Editing via Latent Anchor-Aligned Flows},
+    &nbsp;&nbsp;&nbsp;&nbsp;author={Zhou, Zhenglin and Ma, Fan and Gui, Chengzhuo and Xia, Xiaobo and Fan, Hehe and
+    Yang, Yi and Chua, Tat-Seng},
+    &nbsp;&nbsp;&nbsp;&nbsp;journal={arXiv preprint arXiv:2511.22357},
+    &nbsp;&nbsp;&nbsp;&nbsp;year={2025},
+    }
+  </p>
+
+</div>
+</body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("teaser-video");
+    let showingVideo = false;
+
+    video.addEventListener("click", () => {
+      if (showingVideo) {
+        video.pause();
+        video.currentTime = 0;
+        video.setAttribute("poster", "assets/teaser/teaser.png");
+        video.removeAttribute("src");
+        video.load();
+        showingVideo = false;
+      } else {
+        video.setAttribute("src", "assets/teaser/teaser.mp4");
+        video.play();
+        showingVideo = true;
+      }
+    });
+  });
+</script>
+
+
