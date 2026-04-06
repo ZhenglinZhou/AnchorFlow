@@ -147,9 +147,10 @@ class Hunyuan3DEdit(Hunyuan3DDiTPipeline):
             step_index = self.scheduler.index_for_timestep(t)
             current_sigma = self.scheduler.sigmas[step_index]
 
-            ft_src = self._get_latent_anchor(zt_src, t, vt_src)
-            ft_tar = self._get_latent_anchor(zt_tar, t, vt_tar)
-            output = (2 - current_sigma) * (ft_tar - ft_src)  # Eq.(11) in main paper
+            ft_src = self._get_latent_anchor(vt_src, t, zt_src)
+            ft_tar = self._get_latent_anchor(vt_tar, t, zt_tar)
+            L_align = (1 - current_sigma) * (ft_tar - ft_src)
+            output = 2 * output + L_align
         return output
 
     def _propagate_for_timestep(self, zt_inv: torch.Tensor, t: torch.Tensor, dt: torch.Tensor) -> torch.Tensor:
