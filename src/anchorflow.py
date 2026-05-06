@@ -149,8 +149,8 @@ class Hunyuan3DEdit(Hunyuan3DDiTPipeline):
 
             ft_src = self._get_latent_anchor(vt_src, t, zt_src)
             ft_tar = self._get_latent_anchor(vt_tar, t, zt_tar)
-            L_align = (1 - current_sigma) * (ft_tar - ft_src)
-            output = 2 * output + L_align
+            L_align = (2 - current_sigma) * (ft_tar - ft_src)  # Eq. (10) in main paper
+            output = output + L_align                          # In practice, L_align is treated as a regularization term
         return output
 
     def _propagate_for_timestep(self, zt_inv: torch.Tensor, t: torch.Tensor, dt: torch.Tensor) -> torch.Tensor:
