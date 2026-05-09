@@ -424,6 +424,11 @@ video {
     font-size: 20px;
 }
 
+#links #dataset::before {
+    content: "\e005";
+    font-size: 20px;
+}
+
 #links #poster::before {
     content: "\e004";
     font-size: 20px;
