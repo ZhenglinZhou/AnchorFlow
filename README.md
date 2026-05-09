@@ -60,7 +60,37 @@ Given a `source shape` and `editing prompt`, we first construct the editing cond
 
 You can find example setups in `./examples`.
 
-The **Eval3DEdit benchmark** is available [here](https://huggingface.co/datasets/chengzgui/Eval3DEdit).
+## Evaluation
+
+The **Eval3DEdit benchmark** is available on [Hugging Face](https://huggingface.co/datasets/chengzgui/Eval3DEdit).
+
+```bash
+hf download chengzgui/Eval3DEdit \
+  --repo-type dataset \
+  --local-dir Eval3DEdit
+```
+
+We provide the Uni3D/CLIP evaluation script under `eval/`.
+
+To run the evaluator, prepare Uni3D separately and point the script to it:
+
+```bash
+git clone https://github.com/baaivision/Uni3D.git
+pip install open_clip_torch trimesh pyrender Pillow numpy
+```
+
+Download the Uni3D checkpoint and EVA02 CLIP weights following the Uni3D instructions, then run:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python eval/uni3d_eval.py Eval3DEdit \
+  --pred_root outputs/anchorflow \
+  --pred_mesh_relpath edited.glb \
+  --metadata_csv Eval3DEdit/metadata.csv \
+  --uni3d_repo /path/to/Uni3D \
+  --ckpt_path /path/to/uni3d/model.pt \
+  --clip_weights_path /path/to/eva02_e_14_plus_laion2b_s9b_b144k.pt \
+  --output_csv results/anchorflow_uni3d.csv
+```
 
 ## Notes
 
