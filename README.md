@@ -2,6 +2,7 @@
 
 <a href='https://zhenglinzhou.github.io/AnchorFlow/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
 <a href='https://arxiv.org/pdf/2511.22357'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
+<a href='https://huggingface.co/datasets/chengzgui/Eval3DEdit'><img src='https://img.shields.io/badge/Dataset-HuggingFace-yellow'></a>
 
 This repo provides the official implementation of **AnchorFlow**, a **training-free** framework for 3D shape editing. The method performs editing directly in the 3D latent space by aligning source and target flow trajectories with latent anchors, enabling semantic-consistent, identity-preserving, and **mask-free** 3D editing across both rigid and non-rigid scenarios.
 
@@ -58,6 +59,8 @@ Given a `source shape` and `editing prompt`, we first construct the editing cond
   * `edited.png`: the `target image`
 
 You can find example setups in `./examples`.
+
+The **Eval3DEdit benchmark** is available [here](https://huggingface.co/datasets/chengzgui/Eval3DEdit).
 
 ## Notes
 
